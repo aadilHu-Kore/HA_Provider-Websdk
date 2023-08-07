@@ -1,7 +1,18 @@
 (function(KoreSDK){
 
     var KoreSDK=KoreSDK||{};
+    //------------------ aadil added----------------
+    var webContext = {};
+    var pageUrl = window.location.href;
+    //pageUrl = "https://esp.syhealth.org/patients/faqs";
+    console.log(`pageUrl value: = ${pageUrl}`)
 
+    if(pageUrl){
+        webContext.pageUrl = pageUrl;
+    }
+    var setBotLanguage= pageUrl.includes("esp") ? 'es' : 'en';
+    console.log({setBotLanguage});
+    //-----------------------------------------------
     var botOptions = {};
     botOptions.logLevel = 'debug';
     botOptions.koreAPIUrl = "https://bots.kore.ai/api/";
@@ -24,6 +35,14 @@
     botOptions.clientSecret = "Ygz/3H0hnT8wKHkw7H2m9UuadWl+EykSThY4xXRXeDw=";
     botOptions.brandingAPIUrl = botOptions.koreAPIUrl +'websdkthemes/'+  botOptions.botInfo._id+'/activetheme';
     botOptions.enableThemes = true;
+    //---------------aadil added-------------------
+    botOptions.botInfo.customData = {
+        "timeZone" :Intl.DateTimeFormat().resolvedOptions().timeZone,
+        webContext : webContext,
+        interactiveLanguage : setBotLanguage
+
+    };
+    //--------------------------------------------
 // for webhook based communication use following option 
 // botOptions.webhookConfig={
 //     enable:true,
