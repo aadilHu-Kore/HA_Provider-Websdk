@@ -1,4 +1,7 @@
-﻿# Kore.ai SDK
+﻿# Steps to run this websdk code locally
+- follow this link to run locally: https://developer.kore.ai/docs/bots/how-tos/travel-planing-assistant/travel-va-web-sdk-tutorial/
+ 
+ # Kore.ai SDK
 Kore.ai offers Bots SDKs as a set of platform-specific client libraries that provide a quick and convenient way to integrate Kore.ai Bots chat capability into custom applications.
 
 With just few lines of code, you can embed our Kore.ai chat widget into your applications to enable end-users to interact with your applications using Natural Language. For more information, refer to
